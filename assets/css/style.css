@@ -110,6 +110,7 @@ body.active .hidden {
   box-shadow: 1px 2px 8px #0f7762;
   background-color: #13947a;
   color: #fff;
+  text-decoration: none;
 }
 .link.active {
   background-color: #13947a;
@@ -216,7 +217,7 @@ body.active .main-content {
 }
 .dashboard-desk p span {
   color: #0f7762;
-  font-weight: bold;  
+  font-weight: bold;
 }
 .dashboard-container {
   display: grid;
@@ -267,7 +268,6 @@ body.active .main-content {
 }
 /* Dashboard End */
 
-
 /* FITUR */
 .container {
   max-width: 1400px;
@@ -278,7 +278,7 @@ body.active .main-content {
   background-color: #fff;
 }
 
-.container h2{
+.container h2 {
   font-weight: 900;
   color: #0f7762;
   padding: 10px 30px 15px 30px;
@@ -322,7 +322,6 @@ tr:nth-child(even) {
   padding: 6px 12px;
   border-radius: 5px;
 }
-
 
 /************************ login and sign up styling  ******************************/
 

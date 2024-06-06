@@ -1,6 +1,6 @@
-
 <div class="container">
-  <h3>Category Items</h3>
+  <h2>Category Items</h2>
+  <hr>
   <table class="table ">
     <thead>
       <tr>

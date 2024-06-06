@@ -1,5 +1,4 @@
-
-<div >
+<div class="container">
   <h2>Product Sizes Item</h2>
   <table class="table ">
     <thead>
@@ -24,8 +23,10 @@
       <td><?=$row["product_name"]?></td>
       <td><?=$row["size_name"]?></td>      
       <td><?=$row["quantity_in_stock"]?></td>     
-      <td><button class="btn btn-primary" style="height:40px" onclick="variationEditForm('<?=$row['variation_id']?>')">Edit</button></td>
-      <td><button class="btn btn-danger" style="height:40px"  onclick="variationDelete('<?=$row['variation_id']?>')">Delete</button></td>
+      <td class="text-center">
+        <button class="btn btn-info btn-sm"  onclick="variationEditForm('<?=$row['variation_id']?>')"><i class="fas fa-edit"></i></button>
+        <button class="btn btn-danger btn-sm" onclick="variationDelete('<?=$row['variation_id']?>')"><i class="fas fa-trash"></i></button>
+      </td>
       </tr>
       <?php
             $count=$count+1;
@@ -34,7 +35,6 @@
       ?>
   </table>
 
-  <!-- Trigger the modal with a button -->
   <button type="button" class="btn btn-secondary" style="height:40px" data-toggle="modal" data-target="#myModal">
     Add Size Variation
   </button>

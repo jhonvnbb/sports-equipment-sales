@@ -1,6 +1,6 @@
-
-<div >
+<div class="container">
   <h2>Product Items</h2>
+  <hr>
   <table class="table ">
     <thead>
       <tr>

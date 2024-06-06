@@ -15,18 +15,30 @@
       <span class="hidden">Dashboard</span>
     </a>
     <a href="#customers" onclick="showCustomers()" class="link">
-      <img src="./assets/svg/barang.svg" alt="">
+      <img src="./assets/svg/customer.svg" alt="">
       <span class="hidden">Customers</span>
     </a>
     <a href="#category" onclick="showCategory()" class="link">
-      <img src="./assets/svg/pesanan.svg" alt="">
-      <span class="hidden">Pesanan</span>
+      <img src="./assets/svg/category.svg" alt="">
+      <span class="hidden">Category</span>
     </a>
     </li>
-    <a class="link">
-      <img src="./assets/svg/tasks.svg" alt="">
-      <span class="hidden">User</span>
+    <a href="#sizes" onclick="showSizes()" class="link">
+      <img src="./assets/svg/size.svg" alt="">
+      <span class="hidden">Sizes</span>
     </a>
+    <a href="#productsizes" onclick="showProductSizes()" class="link">
+      <img src="./assets/svg/productsize.svg" alt="">
+      <span class="hidden">Product Size</span>
+    </a>
+    <!-- <a href="#products" onclick="showProductItems()" class="link">
+      <img src="./assets/svg/tasks.svg" alt="">
+      <span class="hidden">Products</span>
+    </a>
+    <a href="#orders" onclick="showOrders()" class="link">
+      <img src="./assets/svg/tasks.svg" alt="">
+      <span class="hidden">Orders</span>
+    </a> -->
   </div>
   <div class="sidebar-bottom">
     <div class="sidebar-links">

@@ -42,7 +42,7 @@
         <div class="dashboard">
             <div class="dashboard-desk">
               <h1>Dashboard</h1>
-              <p>Welcome! <span>SportEquipment Admin</span></p>
+              <p>Welcome! <span>SportsEquipment Admin</span></p>
             </div>
 
             <div class="dashboard-container">

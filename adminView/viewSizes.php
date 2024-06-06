@@ -1,6 +1,7 @@
 
-<div >
-  <h3>Available Sizes</h3>
+<div class="container">
+  <h2>Available Sizes</h2>
+  <hr>
   <table class="table ">
     <thead>
       <tr>
