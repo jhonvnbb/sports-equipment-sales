@@ -3,7 +3,7 @@
   <div class="sidebar-header">
     <a class="logo-wrapper">
       <img src="./assets/images/spents.png" alt="">
-      <h2 class="hidden">SPENTS</h2>
+      <h2 class="hidden" style="color: white;">SPENTS</h2>
     </a>
     <button class="toggle-btn">
       <img src="./assets/svg/expand.svg" alt="">

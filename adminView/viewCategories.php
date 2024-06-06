@@ -1,5 +1,5 @@
 
-<div >
+<div class="container">
   <h3>Category Items</h3>
   <table class="table ">
     <thead>
@@ -19,10 +19,12 @@
     ?>
     <tr>
       <td><?=$count?></td>
-      <td><?=$row["category_name"]?></td>   
-      <!-- <td><button class="btn btn-primary" >Edit</button></td> -->
-      <td><button class="btn btn-danger" style="height:40px" onclick="categoryDelete('<?=$row['category_id']?>')">Delete</button></td>
-      </tr>
+      <td><?=$row["category_name"]?></td>  
+      <td>
+        <button class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button>
+        <button class="btn btn-danger btn-sm" onclick="categoryDelete('<?=$row['category_id']?>')"><i class="fas fa-trash"></i></button>
+      </td>
+    </tr>
       <?php
             $count=$count+1;
           }
