@@ -21,23 +21,23 @@ a {
   cursor: pointer;
 }
 
-.user-cart span{
-    background-color:red; 
-    padding-right:3px; 
-    padding-left:3px;  
-    border-radius:10px; 
-    font-size:18px;
-    margin-left:-1.2rem;
+.user-cart span {
+  background-color: red;
+  padding-right: 3px;
+  padding-left: 3px;
+  border-radius: 10px;
+  font-size: 18px;
+  margin-left: -1.2rem;
 }
 
 /*********** admin dashboard styling **********/
-  .card{
-      background-color: #3B3131;
-      padding:20px;
-      margin: 10px;
-      border-radius: 10px;
-      box-shadow: 8px 5px 5px #3B3131;
-  }   
+.card {
+  background-color: #3b3131;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 8px 5px 5px #3b3131;
+}
 
 /************************** for sidebar ***********************************/
 
@@ -78,11 +78,16 @@ body.active nav {
   align-items: center;
   gap: 1.25rem;
 }
+.logo-wrapper h2 {
+  font-weight: 700;
+  font-size: 27px;
+  margin: 0 auto;
+}
 .logo-wrapper > img {
-  width: 3.25rem;
-  height: 3.25rem;
+  width: 2.75rem;
+  height: 2.75rem;
   background-color: #f4f4f6;
-  padding: 0.4rem;
+  padding: 0.5rem;
   border-radius: 0.5rem;
 }
 .sidebar-links {
@@ -116,7 +121,7 @@ body.active .hidden {
   display: inline;
 }
 
-.link:hover{
+.link:hover {
   box-shadow: 1px 2px 8px #0f7762;
   background-color: #13947a;
 }
@@ -190,67 +195,147 @@ body.active .toggle-btn {
   font-style: italic;
 }
 /* Sidebar End */
-    
-    /* The button used to open the sidebar */
-    .openbtn {
-      font-size: 20px;
-      cursor: pointer;
-      padding: 10px 15px;
-      border: none;
-      color: #fff;
-      background-color:#584e46;
-    }
-    
-    .openbtn:hover {
-      color: #ECDAC9;
-    }
-    
-    /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-    #main {
-      transition: margin-left .5s; /* If you want a transition effect */
-      padding: 20px;
-    }
-    
-    /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-    @media screen and (max-height: 450px) {
-      .sidebar {padding-top: 15px;}
-      .sidebar a {font-size: 18px;}
-    }
+
+/* Main Content Start */
+.main-content {
+  margin-left: 5rem;
+  padding: 0.5rem 1rem;
+}
+body.active .main-content {
+  margin-left: 15rem;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0.1rem 1rem;
+  background-color: #fff;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+/* Dashboard */
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  text-align: center;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+.dashboard-desk {
+  grid-column: 1 / -1;
+  margin-bottom: 0.5em;
+}
+.dashboard-desk h1 {
+  font-size: 2.5em;
+  color: #212121;
+}
+.dashboard-desk p {
+  font-size: 1.2em;
+  color: #aaa;
+  margin: 0;
+}
+.dashboard-desk span {
+  font-size: 17px;
+  color: #16a085;
+  font-weight: 600;
+}
+.dashboard-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.dashboard-card h3 {
+  margin: 0;
+  font-size: 1.4em;
+  color: #fff;
+}
+.dashboard-card p {
+  font-size: 1.6em;
+  color: #555;
+  margin: 10px 0 0;
+  font-weight: 600;
+}
+.dashboard-card .icon {
+  font-size: 2.5em;
+  color: #16a085;
+  margin-bottom: 10px;
+}
+.dashboard-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to top right,
+    rgb(22, 160, 133, 0.8),
+    rgb(22, 160, 133, 0.2)
+  );
+  transform: rotate(45deg);
+  transition: transform 0.5s;
+  z-index: 0;
+}
+.dashboard-card:hover::before {
+  transform: rotate(45deg) translate(10%, 10%);
+}
+.dashboard-card .icon,
+.dashboard-card h3,
+.dashboard-card p {
+  position: relative;
+  z-index: 1;
+}
+.dashboard-card.total-stok {
+  grid-column: 1 / -1;
+}
 
 /************************** product table styling *********************************/
 
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-    box-shadow: 0 2px 15px rgba(64, 64, 64, .7);
-    border-radius: 12px 12px 0 0;
-    margin-bottom: 50px;
-  }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  box-shadow: 0 2px 15px rgba(64, 64, 64, 0.7);
+  border-radius: 12px 12px 0 0;
+  margin-bottom: 50px;
+}
 
-  td,
-  th {
-    padding: 10px 16px;
-    text-align: center;
-  }
+td,
+th {
+  padding: 10px 16px;
+  text-align: center;
+}
 
-  th {
-    background-color: #584e46;
-    color: #fafafa;
-    font-family: 'Open Sans', Sans-serif;
-    font-weight: bold;
-  }
+th {
+  background-color: #584e46;
+  color: #fafafa;
+  font-family: "Open Sans", Sans-serif;
+  font-weight: bold;
+}
 
-  tr {
-    width: 100%;
-    background-color: #fafafa;
-    font-family: 'Montserrat', sans-serif;
-  }
+tr {
+  width: 100%;
+  background-color: #fafafa;
+  font-family: "Montserrat", sans-serif;
+}
 
-  tr:nth-child(even) {
-    background-color: #eeeeee;
-  }
-
+tr:nth-child(even) {
+  background-color: #eeeeee;
+}
 
 /************************ login and sign up styling  ******************************/
 
@@ -271,8 +356,8 @@ body.active .toggle-btn {
 /*
 * Card component
 */
-.card-account{
-  background-color: #ECDAC9;
+.card-account {
+  background-color: #ecdac9;
   /* just in case there no content*/
   padding: 20px 25px 30px;
   margin: 0 auto 25px;
@@ -329,9 +414,9 @@ body.active .toggle-btn {
   font-size: 16px;
 }
 
-.form-signin input[type=email],
-.form-signin input[type=password],
-.form-signin input[type=text],
+.form-signin input[type="email"],
+.form-signin input[type="password"],
+.form-signin input[type="text"],
 .form-signin button {
   width: 100%;
   display: block;
@@ -346,12 +431,11 @@ body.active .toggle-btn {
 .form-signin .form-control:focus {
   border-color: #ab9787;
   outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px #8a7a6d;
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px #8a7a6d;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #8a7a6d;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #8a7a6d;
 }
 
 .btn.btn-signin {
-  
   background-color: #584e46;
   padding: 2px;
   font-weight: 700;
@@ -373,7 +457,6 @@ body.active .toggle-btn {
   background-color: #a56a39;
 }
 
-
 .box {
   position: relative;
   background-color: #000;
@@ -384,13 +467,13 @@ body.active .toggle-btn {
   display: block;
   max-width: 100%;
   height: auto;
-  transition: .5s ease;
+  transition: 0.5s ease;
   backface-visibility: hidden;
   object-fit: contain;
 }
 
 .middle {
-  transition: .5s ease;
+  transition: 0.5s ease;
   opacity: 0;
   position: absolute;
   top: 50%;
@@ -417,26 +500,25 @@ body.active .toggle-btn {
 }
 
 /* *******************   cart to login icon styling   ********************* */
-.cart-login-btn{
-  margin:5px;
+.cart-login-btn {
+  margin: 5px;
   border-style: outset;
 }
-.cart-login-btn a i{
+.cart-login-btn a i {
   padding: 10px;
-  font-size:30px; 
-  color:#584e46;              
+  font-size: 30px;
+  color: #584e46;
 }
-.cart-login-btn a i:hover{  
+.cart-login-btn a i:hover {
   color: grey;
 }
 
-
 /* ****************************   footer  *************************** */
-.footer-hover{
+.footer-hover {
   color: #000;
 }
 
-.footer-hover:hover{
-  color: #ECDAC9;
+.footer-hover:hover {
+  color: #ecdac9;
   text-decoration: none;
 }
