@@ -3,11 +3,11 @@
   <table class="table ">
     <thead>
       <tr>
-        <th class="text-center">S.N.</th>
+        <th class="text-center">No.</th>
         <th class="text-center">Product Name</th>
         <th class="text-center">Size</th>
         <th class="text-center">Stock Quantity</th>
-        <th class="text-center" colspan="2">Action</th>
+        <th class="text-center">Action</th>
       </tr>
     </thead>
     <?php
@@ -104,6 +104,13 @@
     </div>
   </div>
 
-  
 </div>
-   
+
+<footer style="width: 1500px;">
+  <div class="social-icons">
+      <a href="https://github.com/jhonvnbb" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.youtube.com/channel/UCML2M8j1wTcXTP8D0mHPhgw" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.instagram.com/jhonnvnbb" target="_blank"><i class="fab fa-instagram"></i></a>
+  </div>
+  <p>&copy; 2024 <span>Sport Equipments</span>. All Rights Reserved.</p>
+</footer>

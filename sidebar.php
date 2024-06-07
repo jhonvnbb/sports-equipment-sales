@@ -2,7 +2,7 @@
 <nav>
   <div class="sidebar-header">
     <a class="logo-wrapper">
-      <img src="./assets/images/spents.png" alt="">
+      <img src="./assets/images/spents-logo.png" alt="">
       <h2 class="hidden" style="color: white;">SPENTS</h2>
     </a>
     <button class="toggle-btn">
@@ -31,12 +31,12 @@
       <img src="./assets/svg/productsize.svg" alt="">
       <span class="hidden">Product Size</span>
     </a>
-    <!-- <a href="#products" onclick="showProductItems()" class="link">
-      <img src="./assets/svg/tasks.svg" alt="">
+    <a href="#products" onclick="showProductItems()" class="link">
+      <img src="./assets/svg/barang.svg" alt="">
       <span class="hidden">Products</span>
     </a>
-    <a href="#orders" onclick="showOrders()" class="link">
-      <img src="./assets/svg/tasks.svg" alt="">
+    <!-- <a href="#orders" onclick="showOrders()" class="link">
+      <img src="./assets/svg/order.svg" alt="">
       <span class="hidden">Orders</span>
     </a> -->
   </div>

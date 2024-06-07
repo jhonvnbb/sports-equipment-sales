@@ -1,7 +1,7 @@
 
-<div class="container p-5">
-
-<h4>Edit Product Detail</h4>
+<div class="container">
+<h2>Edit Product Detail</h2>
+<hr>
 <?php
     include_once "../config/dbconnect.php";
 	$ID=$_POST['record'];
@@ -54,6 +54,7 @@
          <img width='200px' height='150px' src='<?=$row1["product_image"]?>'>
          <div>
             <label for="file">Choose Image:</label>
+            <br>
             <input type="text" id="existingImage" class="form-control" value="<?=$row1['product_image']?>" hidden>
             <input type="file" id="newImage" value="">
          </div>

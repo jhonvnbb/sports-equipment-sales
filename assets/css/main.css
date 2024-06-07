@@ -270,7 +270,7 @@ body.active .main-content {
 
 /* FITUR */
 .container {
-  max-width: 1400px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 20px;
   border-radius: 10px;
@@ -289,11 +289,12 @@ body.active .main-content {
   border-collapse: collapse;
   border-spacing: 0;
   overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 td,
 th {
-  padding: 12px;
+  padding: 16px;
   text-align: center;
 }
 
@@ -301,15 +302,22 @@ th {
   background-color: #0f7762;
   font-weight: bold;
   color: #fff;
-  margin: 0 auto;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 tr {
-  background-color: #fafafa;
+  background-color: #ffffff;
+  transition: background-color 0.3s ease;
 }
 
 tr:nth-child(even) {
-  background-color: #f0f0f0;
+  background-color: #f7f7f7;
+}
+
+tr:hover {
+  background-color: #e9f5f2;
 }
 
 .actions-cell {
@@ -319,184 +327,27 @@ tr:nth-child(even) {
 .actions-cell a {
   display: inline-block;
   margin-right: 8px;
-  padding: 6px 12px;
+  padding: 8px 16px;
   border-radius: 5px;
-}
-
-/************************ login and sign up styling  ******************************/
-
-.card-container.card-account {
-  max-width: 500px;
-  padding: 30px 30px;
-}
-
-.btn {
-  font-weight: 700;
-  height: 36px;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-  cursor: default;
-}
-
-/*
-* Card component
-*/
-.card-account {
-  background-color: #ecdac9;
-  /* just in case there no content*/
-  padding: 20px 25px 30px;
-  margin: 0 auto 25px;
-  margin-top: 40px;
-  /* shadows and rounded borders */
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
-  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-}
-
-.profile-img-card {
-  width: 96px;
-  height: 96px;
-  margin: 0 auto 10px;
-  display: block;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-}
-
-/*
-* Form styles
-*/
-.profile-name-card {
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
-  margin: 10px 0 0;
-  min-height: 1em;
-}
-
-.reauth-email {
-  display: block;
-  color: #404040;
-  line-height: 2;
-  margin-bottom: 10px;
-  font-size: 14px;
-  text-align: center;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.form-signin #inputEmail,
-.form-signin #inputPassword {
-  direction: ltr;
-  height: 44px;
-  font-size: 16px;
-}
-
-.form-signin input[type="email"],
-.form-signin input[type="password"],
-.form-signin input[type="text"],
-.form-signin button {
-  width: 100%;
-  display: block;
-  margin-bottom: 10px;
-  z-index: 1;
-  position: relative;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.form-signin .form-control:focus {
-  border-color: #ab9787;
-  outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #8a7a6d;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #8a7a6d;
-}
-
-.btn.btn-signin {
-  background-color: #584e46;
-  padding: 2px;
-  font-weight: 700;
-  font-size: 16px;
-  height: 36px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  border: none;
-  -o-transition: all 0.218s;
-  -moz-transition: all 0.218s;
-  -webkit-transition: all 0.218s;
-  transition: all 0.218s;
-}
-
-.btn.btn-signin:hover,
-.btn.btn-signin:active,
-.btn.btn-signin:focus {
-  background-color: #a56a39;
-}
-
-.box {
-  position: relative;
-  background-color: #000;
-}
-
-.image {
-  opacity: 1;
-  display: block;
-  max-width: 100%;
-  height: auto;
-  transition: 0.5s ease;
-  backface-visibility: hidden;
-  object-fit: contain;
-}
-
-.middle {
-  transition: 0.5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.box:hover .image {
-  opacity: 0.3;
-}
-
-.box:hover .middle {
-  opacity: 1;
-}
-
-.text {
-  background-color: #584e46;
   color: #fff;
-  font-size: 16px;
-  padding: 6px;
-  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
-/* *******************   cart to login icon styling   ********************* */
-.cart-login-btn {
-  margin: 5px;
-  border-style: outset;
+.actions-cell a.edit {
+  background-color: #4caf50;
 }
-.cart-login-btn a i {
-  padding: 10px;
-  font-size: 30px;
-  color: #584e46;
+
+.actions-cell a.edit:hover {
+  background-color: #45a049;
 }
-.cart-login-btn a i:hover {
-  color: grey;
+
+.actions-cell a.delete {
+  background-color: #f44336;
+}
+
+.actions-cell a.delete:hover {
+  background-color: #e53935;
 }
 
 /* FOOTER */

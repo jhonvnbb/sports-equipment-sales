@@ -4,7 +4,7 @@
   <table class="table ">
     <thead>
       <tr>
-        <th class="text-center">S.N.</th>
+        <th class="text-center">No.</th>
         <th class="text-center">Category Name</th>
         <th class="text-center" colspan="2">Action</th>
       </tr>
@@ -21,7 +21,7 @@
       <td><?=$count?></td>
       <td><?=$row["category_name"]?></td>  
       <td>
-        <button class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button>
+        <!-- <button class="btn btn-info btn-sm"><i class="fas fa-edit"></i></button> -->
         <button class="btn btn-danger btn-sm" onclick="categoryDelete('<?=$row['category_id']?>')"><i class="fas fa-trash"></i></button>
       </td>
     </tr>
@@ -32,7 +32,6 @@
       ?>
   </table>
 
-  <!-- Trigger the modal with a button -->
   <button type="button" class="btn btn-secondary" style="height:40px" data-toggle="modal" data-target="#myModal">
     Add Category
   </button>
@@ -67,6 +66,13 @@
     </div>
   </div>
 
-  
 </div>
-   
+
+<footer style="width:1500px">
+  <div class="social-icons">
+      <a href="https://github.com/jhonvnbb" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.youtube.com/channel/UCML2M8j1wTcXTP8D0mHPhgw" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.instagram.com/jhonnvnbb" target="_blank"><i class="fab fa-instagram"></i></a>
+  </div>
+  <p>&copy; 2024 <span>Sport Equipments</span>. All Rights Reserved.</p>
+</footer>

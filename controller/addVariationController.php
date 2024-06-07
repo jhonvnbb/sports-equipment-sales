@@ -14,12 +14,12 @@
          if(!$insert)
          {
              echo mysqli_error($conn);
-             header("Location: ../dashboard.php?variation=error");
+             header("Location: ../?variation=error");
          }
          else
          {
              echo "Records added successfully.";
-             header("Location: ../dashboard.php?variation=success");
+             header("Location: ../?variation=success");
          }
      
     }

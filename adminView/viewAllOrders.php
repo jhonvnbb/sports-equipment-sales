@@ -1,9 +1,10 @@
-<div id="ordersBtn" >
+<div class="container" id="ordersBtn">
   <h2>Order Details</h2>
+  <hr>
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>O.N.</th>
+        <th>No.</th>
         <th>Customer</th>
         <th>Contact</th>
         <th>OrderDate</th>
@@ -76,8 +77,8 @@
         <div class="order-view-modal modal-body">
         
         </div>
-      </div><!--/ Modal content-->
-    </div><!-- /Modal dialog-->
+      </div>
+    </div>
   </div>
 <script>
      //for view order modal  

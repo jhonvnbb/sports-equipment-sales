@@ -1,6 +1,6 @@
-<div class="container p-5">
-
-<h4>Edit Variation Detail</h4>
+<div class="container">
+<h2>Edit Variation Detail</h2>
+<hr>
 <?php
     include_once "../config/dbconnect.php";
 	$ID=$_POST['record'];

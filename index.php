@@ -24,7 +24,7 @@
     />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./assets/css/style.css">
+     <link rel="stylesheet" href="./assets/css/main.css">
 
     <!-- Chart JS -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -152,7 +152,7 @@
                             <?php echo $countUsers; ?>, 
                             <?php echo $countCategories; ?>, 
                             <?php echo $countProducts; ?>, 
-                            <?php echo $countOrders; ?>
+                            <?php echo $countOrders ?>
                         ],
                         backgroundColor: [
                             'rgba(54, 162, 235, 0.8)',
@@ -230,7 +230,7 @@
         ?>
 
 
-<script type="text/javascript" src="./assets/js/ajaxWork.js"></script>    
+    <script type="text/javascript" src="./assets/js/ajaxWork.js"></script>    
     <script type="text/javascript" src="./assets/js/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" ></script>
