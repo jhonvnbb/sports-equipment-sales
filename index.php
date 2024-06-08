@@ -29,6 +29,10 @@
     <!-- Chart JS -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+    <!-- Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
   </head>
 </head>
 <body >
@@ -210,30 +214,142 @@
         });
     </script>
        
-            
-        <?php
-            if (isset($_GET['category']) && $_GET['category'] == "success") {
-                echo '<script> alert("Category Successfully Added")</script>';
-            }else if (isset($_GET['category']) && $_GET['category'] == "error") {
-                echo '<script> alert("Adding Unsuccess")</script>';
-            }
-            if (isset($_GET['size']) && $_GET['size'] == "success") {
-                echo '<script> alert("Size Successfully Added")</script>';
-            }else if (isset($_GET['size']) && $_GET['size'] == "error") {
-                echo '<script> alert("Adding Unsuccess")</script>';
-            }
-            if (isset($_GET['variation']) && $_GET['variation'] == "success") {
-                echo '<script> alert("Variation Successfully Added")</script>';
-            }else if (isset($_GET['variation']) && $_GET['variation'] == "error") {
-                echo '<script> alert("Adding Unsuccess")</script>';
-            }
-        ?>
+    <?php
+        if (isset($_GET['category']) && $_GET['category'] == "success") {
+            echo '<script>
+                    Swal.fire({
+                        icon: "success",
+                        title: "Success",
+                        text: "Category Successfully Added"
+                    });
+                  </script>';
+        } else if (isset($_GET['category']) && $_GET['category'] == "error") {
+            echo '<script>
+                    Swal.fire({
+                        icon: "error",
+                        title: "Error",
+                        text: "Adding Unsuccessful"
+                    });
+                  </script>';
+        }
+        if (isset($_GET['editCategory']) && $_GET['editCategory'] == "success") {
+            echo '<script>
+                    Swal.fire({
+                        icon: "success",
+                        title: "Success",
+                        text: "Category Successfully Edited"
+                    });
+                  </script>';
+        } else if (isset($_GET['editCategory']) && $_GET['editCategory'] == "error") {
+            echo '<script>
+                    Swal.fire({
+                        icon: "error",
+                        title: "Error",
+                        text: "Editing Unsuccessful"
+                    });
+                  </script>';
+        }
 
 
+        if (isset($_GET['size']) && $_GET['size'] == "success") {
+            echo '<script>
+                    Swal.fire({
+                        icon: "success",
+                        title: "Success",
+                        text: "Size Successfully Added"
+                    });
+                  </script>';
+        } else if (isset($_GET['size']) && $_GET['size'] == "error") {
+            echo '<script>
+                    Swal.fire({
+                        icon: "error",
+                        title: "Error",
+                        text: "Adding Unsuccessful"
+                    });
+                  </script>';
+        }
+        if (isset($_GET['editSize']) && $_GET['editSize'] == "success") {
+            echo '<script>
+                    Swal.fire({
+                        icon: "success",
+                        title: "Success",
+                        text: "Size Successfully Edited"
+                    });
+                  </script>';
+        } else if (isset($_GET['editSize']) && $_GET['editSize'] == "error") {
+            echo '<script>
+                    Swal.fire({
+                        icon: "error",
+                        title: "Error",
+                        text: "Editing Unsuccessful"
+                    });
+                  </script>';
+        }
+
+        
+        if (isset($_GET['variation']) && $_GET['variation'] == "success") {
+            echo '<script>
+                    Swal.fire({
+                        icon: "success",
+                        title: "Success",
+                        text: "Variation Successfully Added"
+                    });
+                  </script>';
+        } else if (isset($_GET['variation']) && $_GET['variation'] == "error") {
+            echo '<script>
+                    Swal.fire({
+                        icon: "error",
+                        title: "Error",
+                        text: "Adding Unsuccessful"
+                    });
+                  </script>';
+        }
+        
+
+        if (isset($_GET['editUser']) && $_GET['editUser'] == "success") {
+            echo '<script>
+                    Swal.fire({
+                        icon: "success",
+                        title: "Success",
+                        text: "User Successfully Edited"
+                    });
+                  </script>';
+        } else if (isset($_GET['editUser']) && $_GET['editUser'] == "error") {
+            echo '<script>
+                    Swal.fire({
+                        icon: "error",
+                        title: "Error",
+                        text: "Editing Unsuccessful"
+                    });
+                  </script>';
+        }
+        if (isset($_GET['addUser']) && $_GET['addUser'] == "success") {
+            echo '<script>
+                    Swal.fire({
+                        icon: "success",
+                        title: "Success",
+                        text: "User Successfully Added"
+                    });
+                  </script>';
+        } else if (isset($_GET['addUser']) && $_GET['addUser'] == "error") {
+            echo '<script>
+                    Swal.fire({
+                        icon: "error",
+                        title: "Error",
+                        text: "Adding Unsuccessful"
+                    });
+                  </script>';
+        }
+    ?>
+
+    <!-- JS -->
     <script type="text/javascript" src="./assets/js/ajaxWork.js"></script>    
     <script type="text/javascript" src="./assets/js/script.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" ></script>
+
+    <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
 </body>
  

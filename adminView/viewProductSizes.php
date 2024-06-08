@@ -1,5 +1,6 @@
 <div class="container">
   <h2>Product Sizes Item</h2>
+  <hr>
   <table class="table ">
     <thead>
       <tr>
@@ -106,7 +107,7 @@
 
 </div>
 
-<footer style="width: 1500px;">
+<footer style="max-width: 1500px;">
   <div class="social-icons">
       <a href="https://github.com/jhonvnbb" target="_blank"><i class="fab fa-github"></i></a>
       <a href="https://www.youtube.com/channel/UCML2M8j1wTcXTP8D0mHPhgw" target="_blank"><i class="fab fa-youtube"></i></a>

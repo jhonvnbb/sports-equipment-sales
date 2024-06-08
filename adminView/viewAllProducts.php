@@ -27,7 +27,7 @@
       <td><?=$row["product_name"]?></td>
       <td><?=$row["product_desc"]?></td>      
       <td><?=$row["category_name"]?></td> 
-      <td><?=$row["price"]?></td>     
+      <td><?= 'Rp ' . number_format($row["price"], 0, ',', '.') ?></td>     
       <td class="text-center">
         <button class="btn btn-info" onclick="itemEditForm('<?=$row['product_id']?>')"><i class="fas fa-edit"></i></button>
         <button class="btn btn-danger" onclick="itemDelete('<?=$row['product_id']?>')"><i class="fas fa-trash"></i></button>
@@ -70,7 +70,7 @@
             </div>
             <div class="form-group">
               <label>Category:</label>
-              <select id="category" >
+              <select id="category">
                 <option disabled selected>Select category</option>
                 <?php
 
@@ -87,7 +87,7 @@
             </div>
             <div class="form-group">
                 <label for="file">Choose Image:</label>
-                <input type="file" class="form-control-file" id="file">
+                <input type="file" class="form-control-file" id="file" required>
             </div>
             <div class="form-group">
               <button type="submit" class="btn btn-secondary" id="upload" style="height:40px">Add Item</button>

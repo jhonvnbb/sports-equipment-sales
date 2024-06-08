@@ -27,6 +27,7 @@
       <label for="price">Unit Price:</label>
       <input type="number" class="form-control" id="p_price" value="<?=$row1['price']?>">
     </div>
+
     <div class="form-group">
       <label>Category:</label>
       <select id="category">

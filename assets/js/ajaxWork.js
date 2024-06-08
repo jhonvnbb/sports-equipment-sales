@@ -122,7 +122,11 @@ function addItems() {
     processData: false,
     contentType: false,
     success: function (data) {
-      alert("Product Added successfully.");
+      Swal.fire({
+        icon: "success",
+        title: "Success",
+        text: "Product Successfully Added"
+      });
       $("form").trigger("reset");
       showProductItems();
     },
@@ -143,63 +147,85 @@ function itemEditForm(id) {
 
 //update product after submit
 function updateItems() {
-  var product_id = $("#product_id").val();
-  var p_name = $("#p_name").val();
-  var p_desc = $("#p_desc").val();
-  var p_price = $("#p_price").val();
-  var category = $("#category").val();
-  var existingImage = $("#existingImage").val();
-  var newImage = $("#newImage")[0].files[0];
-  var fd = new FormData();
-  fd.append("product_id", product_id);
-  fd.append("p_name", p_name);
-  fd.append("p_desc", p_desc);
-  fd.append("p_price", p_price);
-  fd.append("category", category);
-  fd.append("existingImage", existingImage);
-  fd.append("newImage", newImage);
+    var product_id = $("#product_id").val();
+    var p_name = $("#p_name").val();
+    var p_desc = $("#p_desc").val();
+    var p_price = $("#p_price").val();
+    var category = $("#category").val();
+    var existingImage = $("#existingImage").val();
+    var newImage = $("#newImage")[0].files[0];
+    var fd = new FormData();
+    fd.append("product_id", product_id);
+    fd.append("p_name", p_name);
+    fd.append("p_desc", p_desc);
+    fd.append("p_price", p_price);
+    fd.append("category", category);
+    fd.append("existingImage", existingImage);
+    fd.append("newImage", newImage);
 
-  $.ajax({
-    url: "./controller/updateItemController.php",
-    method: "post",
-    data: fd,
-    processData: false,
-    contentType: false,
-    success: function (data) {
-      alert("Data Update Success.");
-      $("form").trigger("reset");
-      showProductItems();
-    },
-  });
+    $.ajax({
+        url: "./controller/updateItemController.php",
+        method: "post",
+        data: fd,
+        processData: false,
+        contentType: false,
+        success: function (data) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: 'Data Update Success.'
+            });
+            $("form").trigger("reset");
+            showProductItems();
+        },
+        error: function () {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'There was a problem updating the data.'
+            });
+        }
+    });
 }
 
 //delete product data
 function itemDelete(id) {
-  $.ajax({
-    url: "./controller/deleteItemController.php",
-    method: "post",
-    data: { record: id },
-    success: function (data) {
-      alert("Items Successfully deleted");
-      $("form").trigger("reset");
-      showProductItems();
-    },
-  });
+    $.ajax({
+        url: "./controller/deleteItemController.php",
+        method: "post",
+        data: { record: id },
+        success: function (data) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: 'Item Successfully deleted'
+            });
+            $("form").trigger("reset");
+            showProductItems();
+        },
+        error: function () {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'There was a problem deleting the item.'
+            });
+        }
+    });
 }
 
 //delete cart data
-function cartDelete(id) {
-  $.ajax({
-    url: "./controller/deleteCartController.php",
-    method: "post",
-    data: { record: id },
-    success: function (data) {
-      alert("Cart Item Successfully deleted");
-      $("form").trigger("reset");
-      showMyCart();
-    },
-  });
-}
+// function cartDelete(id) {
+//   $.ajax({
+//     url: "./controller/deleteCartController.php",
+//     method: "post",
+//     data: { record: id },
+//     success: function (data) {
+//       alert("Cart Item Successfully deleted");
+//       $("form").trigger("reset");
+//       showMyCart();
+//     },
+//   });
+// }
 
 function eachDetailsForm(id) {
   $.ajax({
@@ -219,7 +245,11 @@ function categoryDelete(id) {
     method: "post",
     data: { record: id },
     success: function (data) {
-      alert("Category Successfully deleted");
+      Swal.fire({
+          icon: "success",
+          title: "Success",
+          text: "Category Successfully Deleted"
+      });
       $("form").trigger("reset");
       showCategory();
     },
@@ -233,12 +263,17 @@ function sizeDelete(id) {
     method: "post",
     data: { record: id },
     success: function (data) {
-      alert("Size Successfully deleted");
+      Swal.fire({
+        icon: "success",
+        title: "Success",
+        text: "Size Successfully Deleted"
+      });
       $("form").trigger("reset");
       showSizes();
     },
   });
 }
+
 //delete user
 function deleteUser(id) {
   $.ajax({
@@ -246,7 +281,11 @@ function deleteUser(id) {
     method: "post",
     data: { record: id },
     success: function (data) {
-      alert("User Successfully deleted");
+      Swal.fire({
+        icon: "success",
+        title: "Success",
+        text: "User Successfully Deleted"
+      });
       $("form").trigger("reset");
       showCustomers();
     },
@@ -260,7 +299,11 @@ function variationDelete(id) {
     method: "post",
     data: { record: id },
     success: function (data) {
-      alert("Successfully deleted");
+      Swal.fire({
+        icon: "success",
+        title: "Success",
+        text: "Variation Successfully Deleted"
+      });
       $("form").trigger("reset");
       showProductSizes();
     },
@@ -298,75 +341,80 @@ function updateVariations() {
     processData: false,
     contentType: false,
     success: function (data) {
-      alert("Update Success.");
+      Swal.fire({
+        icon: "success",
+        title: "Success",
+        text: "Variation Successfully Edited"
+      });
       $("form").trigger("reset");
       showProductSizes();
     },
   });
 }
-function search(id) {
-  $.ajax({
-    url: "./controller/searchController.php",
-    method: "post",
-    data: { record: id },
-    success: function (data) {
-      $(".eachCategoryProducts").html(data);
-    },
-  });
-}
 
-function quantityPlus(id) {
-  $.ajax({
-    url: "./controller/addQuantityController.php",
-    method: "post",
-    data: { record: id },
-    success: function (data) {
-      $("form").trigger("reset");
-      showMyCart();
-    },
-  });
-}
-function quantityMinus(id) {
-  $.ajax({
-    url: "./controller/subQuantityController.php",
-    method: "post",
-    data: { record: id },
-    success: function (data) {
-      $("form").trigger("reset");
-      showMyCart();
-    },
-  });
-}
+// function search(id) {
+//   $.ajax({
+//     url: "./controller/searchController.php",
+//     method: "post",
+//     data: { record: id },
+//     success: function (data) {
+//       $(".eachCategoryProducts").html(data);
+//     },
+//   });
+// }
 
-function checkout() {
-  $.ajax({
-    url: "./view/viewCheckout.php",
-    method: "post",
-    data: { record: 1 },
-    success: function (data) {
-      $(".allContent-section").html(data);
-    },
-  });
-}
+// function quantityPlus(id) {
+//   $.ajax({
+//     url: "./controller/addQuantityController.php",
+//     method: "post",
+//     data: { record: id },
+//     success: function (data) {
+//       $("form").trigger("reset");
+//       showMyCart();
+//     },
+//   });
+// }
+// function quantityMinus(id) {
+//   $.ajax({
+//     url: "./controller/subQuantityController.php",
+//     method: "post",
+//     data: { record: id },
+//     success: function (data) {
+//       $("form").trigger("reset");
+//       showMyCart();
+//     },
+//   });
+// }
 
-function removeFromWish(id) {
-  $.ajax({
-    url: "./controller/removeFromWishlist.php",
-    method: "post",
-    data: { record: id },
-    success: function (data) {
-      alert("Removed from wishlist");
-    },
-  });
-}
+// function checkout() {
+//   $.ajax({
+//     url: "./view/viewCheckout.php",
+//     method: "post",
+//     data: { record: 1 },
+//     success: function (data) {
+//       $(".allContent-section").html(data);
+//     },
+//   });
+// }
 
-function addToWish(id) {
-  $.ajax({
-    url: "./controller/addToWishlist.php",
-    method: "post",
-    data: { record: id },
-    success: function (data) {
-      alert("Added to wishlist");
-    },
-  });
-}
+// function removeFromWish(id) {
+//   $.ajax({
+//     url: "./controller/removeFromWishlist.php",
+//     method: "post",
+//     data: { record: id },
+//     success: function (data) {
+//       alert("Removed from wishlist");
+//     },
+//   });
+// }
+
+// function addToWish(id) {
+//   $.ajax({
+//     url: "./controller/addToWishlist.php",
+//     method: "post",
+//     data: { record: id },
+//     success: function (data) {
+//       alert("Added to wishlist");
+//     },
+//   });
+// }
