@@ -42,9 +42,9 @@
   </div>
   <div class="sidebar-bottom">
     <div class="sidebar-links">
-      <a class="link">
+      <a href="#" onclick="return confirmLogout()" class="link">
         <img src="./assets/svg/settings.svg" alt="">
-        <span class="hidden">Settings</span>
+        <span class="hidden">Log Out</span>
       </a>
     </div>
     <div class="admin-profile">

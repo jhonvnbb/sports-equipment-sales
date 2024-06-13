@@ -1,14 +1,7 @@
 <?php
+    $conn = mysqli_connect("localhost", "root", "", "sports_equipment_sales");
 
-$server = "localhost";
-$user = "root";
-$password = "";
-$db = "sports_equipment_sales";
-
-$conn = mysqli_connect($server,$user,$password,$db);
-
-if(!$conn) {
-    die("Connection Failed:".mysqli_connect_error());
-}
-
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
 ?>

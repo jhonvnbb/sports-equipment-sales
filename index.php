@@ -1,8 +1,34 @@
+<?php
+session_start();
+include_once "./config/dbconnect.php";
+
+if (!isset($_SESSION['username'])) {
+    header('Location: ./login.php');
+    exit();
+}
+
+$username = $_SESSION['username'];
+
+$sql = "SELECT * FROM admin WHERE username = '$username'";
+$run_Sql = mysqli_query($conn, $sql);
+
+if ($run_Sql) {
+    $fetch_info = mysqli_fetch_assoc($run_Sql);
+    if ($fetch_info) {
+        $username = $fetch_info['username'];
+    } else {
+        header('Location: ./login.php');
+        exit();
+    }
+} else {
+    die("Query Failed: " . mysqli_error($conn));
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Admin</title>
-  <head>
+  <title>SportsEquipment</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -33,7 +59,6 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-  </head>
 </head>
 <body >
     
@@ -113,15 +138,15 @@
                         <h4>Total Orders</h4>
                         <h5>
                         <?php
-                           $sql="SELECT * from orders";
+                           $sql="SELECT * from admin";
                            $result=$conn-> query($sql);
-                           $countOrders=0;
+                           $countAdmin=0;
                            if ($result-> num_rows > 0){
                                while ($row=$result-> fetch_assoc()) {
-                                   $countOrders++;
+                                   $countAdmin++;
                                }
                            }
-                           echo $countOrders;
+                           echo $countAdmin;
                        ?>
                        </h5>
                     </div>
@@ -149,14 +174,14 @@
             const dashboardChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['Total Users', 'Total Categories', 'Total Products', 'Total Orders'],
+                    labels: ['Total Users', 'Total Categories', 'Total Products', 'Total Admin'],
                     datasets: [{
                         label: 'Dashboard Data',
                         data: [
                             <?php echo $countUsers; ?>, 
                             <?php echo $countCategories; ?>, 
                             <?php echo $countProducts; ?>, 
-                            <?php echo $countOrders ?>
+                            <?php echo $countAdmin ?>
                         ],
                         backgroundColor: [
                             'rgba(54, 162, 235, 0.8)',
@@ -304,7 +329,7 @@
                     });
                   </script>';
         }
-        
+
 
         if (isset($_GET['editUser']) && $_GET['editUser'] == "success") {
             echo '<script>
@@ -341,6 +366,26 @@
                   </script>';
         }
     ?>
+
+    <script>
+      function confirmLogout() {
+          Swal.fire({
+              title: 'Apakah Anda yakin?',
+              text: "Anda akan keluar dari sesi ini!",
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Ya, keluar!',
+              cancelButtonText: 'Batal'
+          }).then((result) => {
+              if (result.isConfirmed) {
+                  window.location.href = "./logout.php";
+              }
+          });
+          return false;
+      }
+    </script>
 
     <!-- JS -->
     <script type="text/javascript" src="./assets/js/ajaxWork.js"></script>    

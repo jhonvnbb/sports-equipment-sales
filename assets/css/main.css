@@ -136,6 +136,7 @@ body.active .hidden {
   align-items: center;
   transition: transform 0.25s ease;
   box-shadow: 1px 2px 8px #aaa;
+  z-index: 9999;
 }
 body.active .toggle-btn {
   transform: rotate(180deg);
